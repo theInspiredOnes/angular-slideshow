@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+
+	<link rel="stylesheet" href="assets/css/slideshow.css" />
+	<script type="text/javascript" src="assets/js/angular.min.js"></script>
+	<script type="text/javascript" src="assets/js/slideshow.js"></script>
+</head>
+
+<body>
+	<div id="site">
+		<div data-ng-app="slideshow" data-slideshow="3" data-interval="6000" class="slideshow">
+		   <div class="visible" data-ng-class="{visible: current==0, out: fadeout&&current==1}" style="background-image: url(http://lorempixel.com/g/1000/500/people/7);"></div> 
+		   <div data-ng-class="{visible: current==1, out: fadeout&&current==2}" style="background-image: url(http://lorempixel.com/g/1000/500/people/1);"></div> 
+		   <div data-ng-class="{visible: current==2, out: fadeout&&current==0}" style="background-image: url(http://lorempixel.com/g/1000/500/people/3);"></div> 
+	   </div>
+	</div>  
+</body>
+</html>

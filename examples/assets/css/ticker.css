@@ -1,0 +1,23 @@
+/* === SLIDESHOW === */
+.slideshow {
+  position: relative;
+  overflow: hidden;
+  height: 48px;
+  padding-left: 1.5em;
+}
+.slideshow > div {
+  -moz-transition: ease-in-out all 0.5s;
+  -webkit-transition: ease-in-out all 0.5s;
+  -o-transition: ease-in-out all 0.5s;
+  transition: ease-in-out all 0.5s;
+  top: -100%;
+  position: absolute;
+  opacity: 0;
+}
+.slideshow > div.visible {
+  top: 0;
+  opacity: 1;
+}
+.slideshow > div.out {
+  top: 100%;
+}
