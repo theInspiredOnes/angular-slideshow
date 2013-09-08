@@ -4,19 +4,19 @@ angular.module('slideshow', [])
 			restrict: "A",
 			link: function($scope, $elm, $attrs) {
 				var count = 0;
-				var interval = parseInt($attrs.interval);
-				var elements = parseInt($attrs.slideshow);
+				var interval = parseInt($attrs.slideshow);
+				var elements = $elm.children().length;
 
-				$scope.current = 0;
-				$scope.fadeout = false;
+				$scope.cur = elements;
+				$scope.out = -1;
 
 				if (elements <= 1) return;
 
 				(function tick () {
-					$scope.current = count++ % elements;
-					$scope.fadeout = true;
+					$scope.out = $scope.cur;
+					$scope.cur = count++ % elements;
 					$timeout(tick, interval);
-					$timeout(function() {$scope.fadeout = false}, interval/2);
+					$timeout(function() {$scope.out = -1}, interval/2);
 				})();
 			}
 		};

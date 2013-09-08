@@ -19,19 +19,19 @@ angular.module('myCoolApp', ['slideshow'])
 
 ##Usage
 
-Properly installed the `slideshow` directive is ready to use. It is invoked by the `data-slideshow` attribute wich contains the number of slideshow elements as value. The `data-interval` attribute is required, too, which has the display time of one slideshow element as its value.
+Properly installed the `slideshow` directive is ready to use. It is invoked by the `data-slideshow` attribute wich contains the display time of one slideshow element as value.
 
-The slideshow elements make use of the `ng-class` directive and get the class `visible` if `current` is equal to the index of the respective slideshow element or the class `out` if `fadeout` is `true` and `current` is equal to the index of the following slideshow element.
+The slideshow elements make use of the `ng-class` directive and get the class `visible` if `cur` is equal to the index of the respective slideshow element or the class `out` if `out` equal to the index of the respective slideshow element.
 
 ###As stand-alone app
 
 If the slideshow is the only use of Angular on your website you can realize it like this:
 
 ```html
-<div data-ng-app="slideshow" data-slideshow="3" data-interval="6000" class="slideshow">
-   <div class="visible" data-ng-class="{visible: current==0, out: fadeout&&current==1}"></div> 
-   <div data-ng-class="{visible: current==1, out: fadeout&&current==2}"></div> 
-   <div data-ng-class="{visible: current==2, out: fadeout&&current==0}"></div> 
+<div data-ng-app="slideshow" data-slideshow="6000" class="slideshow">
+	<div class="visible" data-ng-class="{visible: cur==0, out: out==0}"></div> 
+	<div data-ng-class="{visible: cur==1, out: out==1}"></div> 
+	<div data-ng-class="{visible: cur==2, out: out==2}"></div> 
 </div>
 ```
 
@@ -42,10 +42,10 @@ If the slideshow is embedded in your Angular app do it like this:
 ```html
 <div data-ng-app="myCoolApp">
 	<!--...-->
-	<div data-slideshow="3" data-interval="6000" class="slideshow">
-	   <div class="visible" data-ng-class="{visible: current==0, out: fadeout&&current==1}"></div> 
-	   <div data-ng-class="{visible: current==1, out: fadeout&&current==2}"></div> 
-	   <div data-ng-class="{visible: current==2, out: fadeout&&current==0}"></div> 
+	<div data-ng-app="slideshow" data-slideshow="6000" class="slideshow">
+		<div class="visible" data-ng-class="{visible: cur==0, out: out==0}"></div> 
+		<div data-ng-class="{visible: cur==1, out: out==1}"></div> 
+		<div data-ng-class="{visible: cur==2, out: out==2}"></div> 
 	</div>
 	<!--...-->
 </div>

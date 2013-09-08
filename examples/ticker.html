@@ -14,12 +14,12 @@
 
 <body>
 	<div id="site">
-		<div data-ng-app="slideshow" data-slideshow="3" data-interval="6000" class="slideshow">
-		   <div class="visible" data-ng-class="{visible: current==0, out: fadeout&&current==1}"><p><strong>One:</strong> don't mess with the kid.</p>
+		<div data-ng-app="slideshow" data-slideshow="6000" class="slideshow">
+		   <div class="visible" data-ng-class="{visible: cur==0, out: out==0}"><p><strong>One:</strong> don't mess with the kid.</p>
    </div> 
-		   <div data-ng-class="{visible: current==1, out: fadeout&&current==2}"><p><strong>Two:</strong> cereals and milk.</p>
+		   <div data-ng-class="{visible: cur==1, out: out==1}"><p><strong>Two:</strong> cereals and milk.</p>
    </div> 
-		   <div data-ng-class="{visible: current==2, out: fadeout&&current==0}"><p><strong>Three:</strong> is up to you.</p>
+		   <div data-ng-class="{visible: cur==2, out: out==2}"><p><strong>Three:</strong> is up to you.</p>
    </div> 
 	   </div>
 	</div>  
